@@ -63,8 +63,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+Viewing the site by navigating to http://127.0.0.1:8000/ in local web browser
+
 <figure>
-    <a href="/blog/assets/images/django-basic-setup.png"><img src="/blog/assets/images/django-basic-setup.png"></a>
+    <a href="https://leizleho.com/blog/assets/images/django-basic-setup.png"><img src="https://leizleho.com/blog/assets/images/django-basic-setup.png"></a>
     <figcaption>Viewing the site by navigating to http://127.0.0.1:8000/ in local web browser</figcaption>
 </figure>
 
