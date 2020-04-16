@@ -1,15 +1,20 @@
 ---
 title: 'Django Project - Quickstart Guide Part 1'
 date: 2020-04-15T15:30:30-04:00
+last_modified_at: 2020-04-16T10:50:02-05:00
 categories:
   - Quickstart Guide
 tags:
   - QSG
+  - Django
 ---
 
 It has been a long time since I created an app using the Django framework. I want to brush up on it, so I'll create a Django project, and on this post, I'll be taking notes as I go along with the project.
 
 The project that I'll create is a simple blogging app named Darna.
+
+**Notes:** This is not a tutorial, this is just a guide for a general flow when I create a django project and this could change depending on what I feel comfortable to do.
+{: .notice--warning}
 
 ## Creating the project
 
@@ -69,3 +74,57 @@ python manage.py runserver
 </figure>
 
 That's all for the project setup. Let's start writing the code for blogging app!
+
+## Start Coding
+
+- Create models using file **django-project/darna/blog/models.py**
+- Create forms using file **django-project/darna/blog/forms.py**
+- In blog folder create a folder named "static" for css and javascript files
+- Under static folder, create two folder named "css" and "js"
+- At the same level of static folder, create another folder called "templates"
+- Under templates folder, create folders named "blog" and "registration"
+
+```bash
+# blog directory should look like this:
+/blog
+   /migrations
+   /static
+      /css
+      /js
+   /templates
+      /blog
+      /registration
+   __init__.py
+   admin.py
+   apps.py
+   forms.py
+   ...
+```
+
+- Update the settings file **django-project/darna/darna/settings.py** with the folders just created above
+- Find the STATIC_URL and add STATIC_ROOT after it.
+
+```python
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # add this line
+```
+
+- For templates folder, find the BASE_DIR and add TEMPLATE_DIR after it
+
+```python
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = os.path.join(BASE_DIR,'blog/templates/blog') # add this line
+```
+
+- Let's also add the LOGIN_REDIRECT_URL after the STATIC_ROOT
+
+```python
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_REDIRECT_URL = '/'  # add this line
+```
+
+# Summary
+
+In this post, we setup a django project, added models and forms, and configured settings for installed apps, templates directory and static directory.
