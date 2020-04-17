@@ -74,8 +74,7 @@ urlpatterns = [
 ```
 
 - After completing the above steps, we should have this About page now.
-
 <figure>
-    <a href="https://leizleho.com/blog/assets/images/django-about-view.png"><img src="https://leizleho.com/blog/assets/images/django-about-view.png"></a>
-    <figcaption>About Page using django Class-based view (CBV)</figcaption>
+   <img src="{{ site.url }}{{ site.baseurl }}/assets/images/django-about-view.png">
+   <figcaption>About Page using django Class-based view (CBV)</figcaption>
 </figure>
