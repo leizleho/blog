@@ -22,9 +22,6 @@ class AboutView(TemplateView):
     template_name = 'about.html'
 ```
 
-**Notes:** Check out Jinja templating engine to learn more about jinja syntax and other cool stuff such as creating base template and extending it to other templates.
-{: .notice--info}
-
 - Create the base template file **django-project/darna/blog/templates/blog/base.html**
 
 ```html
