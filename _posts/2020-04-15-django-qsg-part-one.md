@@ -116,6 +116,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'blog/templates/blog') # add this line
 ```
 
+- Add the TEMPLATE_DIR to the TEMPLATE definition
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [TEMPLATE_DIR,],  # add the TEMPLATE_DIR in the DIRS list
+        'APP_DIRS': True,
+        ...
+    }
+]
+```
+
 - Let's also add the LOGIN_REDIRECT_URL after the STATIC_ROOT
 
 ```python
